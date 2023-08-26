@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project/Hospital%20Registration/loginview_H.dart';
-import 'package:project/loginstate.dart';
+// import 'package:project/Patient/loginstate.dart';
 import '../firebase_options.dart';
 class RegisterView_H extends StatefulWidget {
   const RegisterView_H({super.key});
@@ -151,7 +151,7 @@ class _RegisterViewState extends State<RegisterView_H> {
                      // Navigator.pop(context);
                     Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginView_H()));
                     }on FirebaseAuthException catch(e){
-                      print('There is a problem!!1');
+                      print('There is a problem!!');
                       if(e.code == 'email-already-in-use'){
                         // Navigator.pop(context);
                         print('Email Already In Use');

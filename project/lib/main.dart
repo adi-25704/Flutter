@@ -1,13 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:project/Hospital%20Registration/hospitalPage.dart';
+import 'package:project/Patient/patientPage.dart';
 import 'package:project/firebase_options.dart';
-import 'package:project/loginstate.dart';
+// import 'package:project/Patient/loginstate.dart';
 import 'package:project/mainpage.dart';
-import 'package:project/patients.dart';
-import 'package:project/registerstate.dart';
+// import 'package:project/Patient/patients.dart';
+// import 'package:project/Hospital%20Registration/registerstate.dart';
 import 'package:project/Hospital Registration/registerView_H.dart';
-// import 'package:project/homepage.dart';
+// import 'package:project/StartingPage.dart';
 
 void main(){
   runApp(const MaterialApp(
@@ -20,12 +22,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomePage(
-    
+    return StartingPage();
+  }
+}
+class StartingPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.cyan,
+        centerTitle: true,
+        title: const Text("Starting Page")
+      ),
+      body: Center(
+        child: Column(
+          children: [
+          //Text("HELLO"),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Hospital()));
+              },
+              child: const Text('Hospital')),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Personal()));
+              },
+              child: const Text('Patient')),
+        ],),
+
+      ),
     );
   }
 }
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -55,7 +82,6 @@ class HomePage extends StatelessWidget {
           default:
           return const Text('Loading');
         }
-        return const Text('Done');
       }
       ),
 

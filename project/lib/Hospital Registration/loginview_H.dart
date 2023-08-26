@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:project/Hospital%20Registration/hospitalPage.dart';
 import 'package:project/firebase_options.dart';
 import 'package:project/mainpage.dart';
-import 'package:project/registerstate.dart';
+import 'package:project/Hospital%20Registration/registerstate.dart';
 class LoginView_H extends StatefulWidget {
   const LoginView_H({super.key});
 
@@ -70,19 +71,11 @@ class _LoginView_HState extends State<LoginView_H> {
                 await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
 
                 DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
-                // String? uid = userCredential.user?.uid;
-                // hospitalRef.child(uid!).set({
-                //   'email': email,
-                //   'password': password
-                // });
-                //print('Some Eror');
-                DatabaseEvent event = await hospitalRef.once();
-                      
-                      print(event.snapshot.value);
+
 
                 Navigator.pop(context,true);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
-                // print(userCredential.jsify());
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage_H()));
+
                 }on FirebaseAuthException catch(e){
                   if(e.code == 'user-not-found'){
                     print('User Not Found');
@@ -95,11 +88,11 @@ class _LoginView_HState extends State<LoginView_H> {
               },
               child: const Text('Login')
               ,),
-              TextButton(onPressed: () {
-                Navigator.push((context),MaterialPageRoute(builder: (context) => const RegisterView()));
-              },
-              child: const Text('Register'),
-              ), 
+              // TextButton(onPressed: () {
+              //   Navigator.push((context),MaterialPageRoute(builder: (context) => const RegisterView()));
+              // },
+              // child: const Text('Register'),
+              // ), 
           ],
         );
           default: return const Text("Loading...");
@@ -109,4 +102,3 @@ class _LoginView_HState extends State<LoginView_H> {
     );
   }
 }
-

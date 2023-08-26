@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:project/loginstate.dart';
-import 'firebase_options.dart';
+// import 'package:project/Patient/loginstate.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import '../firebase_options.dart';
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
@@ -65,10 +67,7 @@ class _RegisterViewState extends State<RegisterView> {
             ),
             TextButton(
               onPressed: () async {
-      
-              
-      
-      
+                
                 final email = __email.text;
                 final password = __password.text;
                 try{
@@ -76,6 +75,13 @@ class _RegisterViewState extends State<RegisterView> {
                   email: email,
                   password: password,
                   );
+
+                    DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
+                      hospitalRef.child(name).child('details').set({
+                        
+                      });
+
+                  Fluttertoast.showToast(msg: 'Registered Sucessfully');
                   Navigator.pop(context);
                 }on FirebaseAuthException catch(e){
                   print('There is a problem!!1');
@@ -85,13 +91,7 @@ class _RegisterViewState extends State<RegisterView> {
                 }
         
               },
-              child:  const Text('Register')),
-                TextButton(
-                  onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
-                  },
-                  child: const Text('Login')
-                  ,)]
+              child:  const Text('Register')),]
           );
             default:
             return const Text('Loading...');

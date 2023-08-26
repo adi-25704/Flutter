@@ -4,7 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:project/firebase_options.dart';
 import 'package:project/mainpage.dart';
-import 'package:project/registerstate.dart';
+import 'package:project/Hospital%20Registration/registerstate.dart';
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -89,11 +89,11 @@ class _LoginViewState extends State<LoginView> {
               },
               child: const Text('Login')
               ,),
-              TextButton(onPressed: () {
-                Navigator.push((context),MaterialPageRoute(builder: (context) => const RegisterView()));
-              },
-              child: const Text('Register'),
-              ), 
+              // TextButton(onPressed: () {
+              //   Navigator.push((context),MaterialPageRoute(builder: (context) => const RegisterView()));
+              // },
+              // child: const Text('Register'),
+              // ), 
           ],
         );
           default: return const Text("Loading...");

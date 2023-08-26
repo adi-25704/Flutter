@@ -13,7 +13,7 @@ class _PatientsState extends State<Patients> {
   @override
   Widget build(BuildContext context) {
     DatabaseReference ref = FirebaseDatabase.instance.ref().child('Patient');
-   return Scaffold(
+  return Scaffold(
       appBar: AppBar(
         title: const Text('Patient List'),
         backgroundColor: Colors.cyan,
