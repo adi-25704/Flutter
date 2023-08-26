@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:project/firebase_options.dart';
 import 'package:project/loginstate.dart';
 import 'package:project/mainpage.dart';
+import 'package:project/patients.dart';
+import 'package:project/registerstate.dart';
 // import 'package:project/homepage.dart';
 
 void main(){
