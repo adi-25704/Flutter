@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hospital.dart';
-import 'Personal.dart';
+import 'Patient.dart';
 
 class Homepage extends StatelessWidget{
   @override

@@ -13,7 +13,7 @@ class _MainPageState extends State<Patient_Data> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Main Page')
+        title: const Text('Your Data')
       ),
     );
   }

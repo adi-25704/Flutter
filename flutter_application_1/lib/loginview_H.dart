@@ -4,7 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 import 'mainpage_H.dart';
-import 'registerPatient.dart';
+import 'registerView_P.dart';
 import 'registerView_H.dart';
 class LoginView_H extends StatefulWidget {
   const LoginView_H({super.key});

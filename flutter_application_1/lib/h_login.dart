@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Hospital_Data.dart';
-import 'main_login.dart';
-import 'registerPatient.dart';
+import 'Internal_Homepage.dart';
+import 'registerView_P.dart';
 class H_login extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

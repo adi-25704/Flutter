@@ -13,7 +13,7 @@ class _MainPageState extends State<MainPage_P> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Main Page')
+        title: const Text('Welcome')
       ),
       body: Center(
         child: Column(

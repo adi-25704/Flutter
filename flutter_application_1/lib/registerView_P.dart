@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'loginview_P.dart';
 import 'firebase_options.dart';
-import 'main_login.dart';
+import 'Internal_Homepage.dart';
 import 'package:firebase_database/firebase_database.dart';
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -33,8 +33,8 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Register"),
-        centerTitle: true, backgroundColor: Colors.red,
+        title: const Text("Register Patient"),
+         backgroundColor: Colors.red,
       ),
       body: FutureBuilder(
         future:

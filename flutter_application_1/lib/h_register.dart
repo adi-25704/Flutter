@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'registerPatient.dart';
+import 'registerView_P.dart';
 
 class H_register extends StatelessWidget{
   @override

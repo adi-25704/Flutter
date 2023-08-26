@@ -5,7 +5,7 @@ class Allocation_Suggestion extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Main Page')
+        title: const Text('Allocation Suggestion')
       ),
     );
   }

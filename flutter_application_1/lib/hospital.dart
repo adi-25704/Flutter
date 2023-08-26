@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'h_login.dart';
 import 'h_register.dart';
-import 'registerPatient.dart';
+import 'registerView_P.dart';
 import 'loginview_P.dart';
 import 'registerView_H.dart';
 import 'loginview_H.dart';

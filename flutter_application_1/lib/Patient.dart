@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'registerPatient.dart';
+import 'registerView_P.dart';
 import 'H_login.dart';
 import 'loginview_P.dart';
 class Personal extends StatelessWidget{

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Allocation_Suggestion.dart';
 import 'Hospital_Data.dart';
 import 'PatientData.dart';
-import 'registerPatient.dart';
+import 'registerView_P.dart';
 class MainPage_H extends StatefulWidget {
   const MainPage_H({super.key});
 
@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage_H> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Main Page')),
+        title: const Text('Welcome')),
       body: Center(
         child: Column(
           children: [
