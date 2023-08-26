@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'registerPatient.dart';
+
 class H_register extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("register"),
+        title: const Text("Register"),
       ),
       body: Center(
-        child: ElevatedButton(
+       child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterView()));      
           },
-          child: Text("go back"),
+          child: const Text("Register"),
         ),
       ),
     );

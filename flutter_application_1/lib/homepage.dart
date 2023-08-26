@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'hospital.dart';
-import 'patient.dart';
+import 'Personal.dart';
 
 class Homepage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.cyan,
         centerTitle: true,
-        title: Text("homepage"),
+        title: Text("Homepage")
       ),
       body: Center(
         child: Column(
           children: [
-          Text("HELLO"),
+          //Text("HELLO"),
           ElevatedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Hospital()));
               },
-              child: Text('FOR HOSPITAL')),
+              child: Text('Hospital')),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Patient()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Personal()));
               },
-              child: Text('FOR PATIENTS')),
+              child: Text('Patient')),
         ],),
 
       ),
