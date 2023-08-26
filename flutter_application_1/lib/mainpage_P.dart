@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'PatientData.dart';
+import 'LabAlgo.dart';
 class MainPage_P extends StatefulWidget {
   const MainPage_P({super.key});
 
@@ -21,7 +22,7 @@ class _MainPageState extends State<MainPage_P> {
           const Text("Hello"),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Patient_Data()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MyPage()));
               },
               child: const Text('Patient Data')),
         ],),
