@@ -145,7 +145,9 @@ class _RegisterViewState extends State<RegisterView_H> {
                         'equipment' : 0.1,
                         'email' : email,
                         'address' : address,
+                        'maxNoOfBeds' : 100
                       });
+                      
                      // Navigator.pop(context);
                     Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginView_H()));
                     }on FirebaseAuthException catch(e){
@@ -162,7 +164,7 @@ class _RegisterViewState extends State<RegisterView_H> {
                 child:  const Text('Register')),
                   TextButton(
                     onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView_H()));
                     },
         
                     child: const Text('Login')

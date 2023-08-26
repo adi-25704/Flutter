@@ -67,19 +67,18 @@ class _LoginView_HState extends State<LoginView_H> {
                 final password = __password.text;
                 try{
 
-                final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+                await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
 
-                DatabaseReference userRef = FirebaseDatabase.instance.ref().child('patient');
-                String? uid = userCredential.user?.uid;
-                userRef.child(uid!).set({
-                  'email': email,
-                  'password': password
-                });
-
-
-                  
-
-
+                DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
+                // String? uid = userCredential.user?.uid;
+                // hospitalRef.child(uid!).set({
+                //   'email': email,
+                //   'password': password
+                // });
+                //print('Some Eror');
+                DatabaseEvent event = await hospitalRef.once();
+                      
+                      print(event.snapshot.value);
 
                 Navigator.pop(context,true);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
@@ -89,6 +88,8 @@ class _LoginView_HState extends State<LoginView_H> {
                     print('User Not Found');
                   }else if(e.code == 'wrong-password'){
                     print('Wrong Password');
+                  }else{
+                    print('-_-');
                   }
                 }
               },
