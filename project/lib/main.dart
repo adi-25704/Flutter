@@ -6,6 +6,7 @@ import 'package:project/loginstate.dart';
 import 'package:project/mainpage.dart';
 import 'package:project/patients.dart';
 import 'package:project/registerstate.dart';
+import 'package:project/Hospital Registration/registerView_H.dart';
 // import 'package:project/homepage.dart';
 
 void main(){
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
             return const MainPage();
           }else{
             // print('No You are not verified');
-            return const LoginView();
+            return const RegisterView_H();
           }
           default:
           return const Text('Loading');
