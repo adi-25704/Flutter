@@ -1,5 +1,9 @@
+//import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
+//import 'package:project/registerstate.dart';
 // import 'package:project/Homepage.dart';
+
 import 'homepage.dart';
 
 void main(){
@@ -12,11 +16,6 @@ class MyApp extends StatelessWidget {
     return Homepage();
   }
 }
-
-
-
-
-
 // class hospital_login extends StatelessWidget{
 //   @override
 //   Widget build(BuildContext context){
@@ -36,6 +35,3 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
-
-
-
