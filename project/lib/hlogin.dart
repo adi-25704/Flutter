@@ -12,8 +12,7 @@ class Hlogin extends StatelessWidget{
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
-          },
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Hdata()));          },
           child: const Text("go back"),
         ),
       ),
