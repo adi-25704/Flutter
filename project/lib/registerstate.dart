@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:project/loginstate.dart';
 import 'firebase_options.dart';
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -30,12 +31,12 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        title: const Text("Register"),
         centerTitle: true,
       ),
       body: FutureBuilder(
         future:
-        Future.delayed(Duration(seconds: 2), (){
+        Future.delayed(const Duration(seconds: 2), (){
               Firebase.initializeApp(
                   options: DefaultFirebaseOptions.currentPlatform,
                 );
@@ -68,24 +69,30 @@ class _RegisterViewState extends State<RegisterView> {
               
       
       
-                final _email = __email.text;
-                final _password = __password.text;
-                
-                final userCredential =  FirebaseAuth.instance.createUserWithEmailAndPassword(
-                  email: _email,
-                  password: _password,
+                final email = __email.text;
+                final password = __password.text;
+                try{
+                final userCredential =  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                  email: email,
+                  password: password,
                   );
-                
-                print(userCredential);
+                }on FirebaseAuthException catch(e){
+                  if(e.code == 'weak-password'){
+                    //Do Smt
+                  }else if(e.code == 'email-already-in-use'){
+                    //Do Smt
+                    //Branch Krish
+                  }
+                }
+        
               },
               child:  const Text('Register')),
-              TextButton(
-                onPressed: () {
-                  // Change State From Current To Login
-                  // const LoginPage();
-                },
-                child: const Text('Login'),
-                ),]
+                TextButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
+                  },
+                  child: const Text('Login')
+                  ,)]
           );
             default:
             return const Text('Loading...');
@@ -93,5 +100,19 @@ class _RegisterViewState extends State<RegisterView> {
         } ,
       ),
     );
+  }
+}
+
+class VerifyView extends StatefulWidget {
+  const VerifyView({super.key});
+
+  @override
+  State<VerifyView> createState() => _VerifyViewState();
+}
+
+class _VerifyViewState extends State<VerifyView> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
