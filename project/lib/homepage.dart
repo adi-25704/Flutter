@@ -8,22 +8,22 @@ class Homepage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("homepage"),
+        title: const Text("HOMEpage"),
       ),
       body: Center(
         child: Column(
           children: [
-          Text("HELLO"),
+          const Text("HELLO"),
           ElevatedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Hospital()));
               },
-              child: Text('FOR HOSPITAL')),
+              child: const Text('FOR HOSPITAL')),
           ElevatedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Patient()));
               },
-              child: Text('FOR PATIENTS')),
+              child: const Text('FOR PATIENTS')),
         ],),
 
       ),

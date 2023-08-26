@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'h_login.dart';
-import 'h_register.dart';
+import 'hlogin.dart';
+import 'hregister.dart';
 
 class Hospital extends StatelessWidget{
   @override
@@ -16,14 +16,14 @@ class Hospital extends StatelessWidget{
           const Text("Hello"),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => H_register()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Hregister()));
               },
-              child: Text('FOR NEW REGISTER')),
+              child: const Text('FOR NEW REGISTER')),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => H_login()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Hlogin()));
               },
-              child: Text('FOR LOGIN')),
+              child: const Text('FOR LOGIN')),
         ],),
 
       ),

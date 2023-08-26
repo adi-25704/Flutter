@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'hdata.dart';
 
-class H_register extends StatelessWidget{
+class Hlogin extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("register"),
+        title: const Text("login"),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text("go back"),
+          child: const Text("go back"),
         ),
       ),
     );
