@@ -1,6 +1,7 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:project/Patient/PatientData.dart';
 import 'package:project/Patient/loginstate.dart';
+import 'package:project/Patient/patientData.dart';
 class Personal extends StatelessWidget{
   const Personal({super.key});
 
@@ -28,6 +29,7 @@ class Personal extends StatelessWidget{
   }
 }
 
+// ignore: camel_case_types
 class MainPage_P extends StatefulWidget {
   const MainPage_P({super.key});
 

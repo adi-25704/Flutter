@@ -15,18 +15,23 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
 
   late final TextEditingController __email;
+  late final TextEditingController __name;
   late final TextEditingController __password;
-
+  late final TextEditingController __age;
   @override
   void initState(){
       __email = TextEditingController();
       __password = TextEditingController();
+      __name = TextEditingController();
+      __age = TextEditingController();
     super.initState();
   }
   @override
   void dispose(){
     __email.dispose();
     __password.dispose();
+    __name.dispose();
+    __age.dispose();
     super.dispose(); 
   }
   @override
@@ -50,6 +55,20 @@ class _RegisterViewState extends State<RegisterView> {
             return Column(
             children: [
               TextField(
+              controller: __name,
+              keyboardType: TextInputType.name,
+              decoration: const InputDecoration(
+                hintText:  'Enter Your Name Here',
+              ),
+            ),
+            TextField(
+              controller: __age,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                hintText:  'Enter Your Age Here',
+              ),
+            ),
+              TextField(
               controller: __email,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
@@ -70,14 +89,15 @@ class _RegisterViewState extends State<RegisterView> {
                 
                 final email = __email.text;
                 final password = __password.text;
+                final name = __name;
                 try{
-                final userCredential =  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                await FirebaseAuth.instance.createUserWithEmailAndPassword(
                   email: email,
                   password: password,
                   );
 
                     DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
-                      hospitalRef.child(name).child('details').set({
+                      hospitalRef.child(name.text).child('details').set({
                         
                       });
 

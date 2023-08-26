@@ -4,16 +4,15 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:project/Hospital%20Registration/hospitalPage.dart';
 import 'package:project/firebase_options.dart';
-import 'package:project/mainpage.dart';
-import 'package:project/Hospital%20Registration/registerstate.dart';
+// import 'package:project/mainpage.dart';
+// import 'package:project/Hospital%20Registration/registerstate.dart';
 class LoginView_H extends StatefulWidget {
   const LoginView_H({super.key});
-
   @override
   State<LoginView_H> createState() => _LoginView_HState();
 }
-
 class _LoginView_HState extends State<LoginView_H> {
+  // ignore: prefer_typing_uninitialized_variables
   late final TextEditingController __email,__password;
   
   @override
@@ -70,10 +69,13 @@ class _LoginView_HState extends State<LoginView_H> {
 
                 await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
 
+                // ignore: unused_local_variable
                 DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
 
 
+                // ignore: use_build_context_synchronously
                 Navigator.pop(context,true);
+                // ignore: use_build_context_synchronously
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage_H()));
 
                 }on FirebaseAuthException catch(e){
