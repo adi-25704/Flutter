@@ -90,7 +90,7 @@ class _AnimatedList extends State<MyPage> {
             ),
 
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
               onPressed: (){}),
       );}
 

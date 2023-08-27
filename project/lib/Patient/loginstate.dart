@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:project/Patient/patientPage.dart';
 import 'package:project/firebase_options.dart';
 import 'package:project/mainpage.dart';
 // import 'package:project/Hospital%20Registration/registerstate.dart';
 class LoginView extends StatefulWidget {
-  final String nameOfHospital;
-  const LoginView({super.key, required this.nameOfHospital});
+  const LoginView({super.key});
 
   @override
   State<LoginView> createState() => _LoginViewState();
@@ -78,7 +78,7 @@ class _LoginViewState extends State<LoginView> {
                 });
 
                 Navigator.pop(context,true);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage_P()));
                 // print(userCredential.jsify());
                 }on FirebaseAuthException catch(e){
                   if(e.code == 'user-not-found'){
