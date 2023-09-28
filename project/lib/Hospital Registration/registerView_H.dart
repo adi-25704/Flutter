@@ -22,8 +22,8 @@ class _RegisterViewState extends State<RegisterView_H> {
   late final TextEditingController __address;
 
   
-  void clearText(final TextEditingController __text) {
-    __text.clear();
+  void clearText(final TextEditingController text) {
+    text.clear();
   }
 
   bool compString(String a, String b){
@@ -150,7 +150,7 @@ class _RegisterViewState extends State<RegisterView_H> {
                       });
                       
                      // Navigator.pop(context);
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => LoginView_H()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginView_H()));
                     }on FirebaseAuthException catch(e){
                       print('There is a problem!!');
                       if(e.code == 'email-already-in-use'){
@@ -159,13 +159,13 @@ class _RegisterViewState extends State<RegisterView_H> {
                       }
                     }
             
-                  };
+                  }
                 },
               
                 child:  const Text('Register')),
                   TextButton(
                     onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LoginView_H()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoginView_H()));
                     },
         
                     child: const Text('Login')

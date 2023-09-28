@@ -22,10 +22,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StartingPage();
+    return const StartingPage();
   }
 }
 class StartingPage extends StatelessWidget{
+  const StartingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

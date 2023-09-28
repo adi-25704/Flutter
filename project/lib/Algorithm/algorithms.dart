@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 // Occupency 
 double? WFM(int occupency,int noOfStaff,int minPat, double equipments){
@@ -10,7 +9,7 @@ double? WFM(int occupency,int noOfStaff,int minPat, double equipments){
 /*
   alloc
 */  
-Future<String>? alloc() async {
+Future<String>? allocateMemory() async {
   DatabaseReference hospitalRef = FirebaseDatabase.instance.ref().child('Hospital');
 
   

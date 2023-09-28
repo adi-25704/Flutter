@@ -23,7 +23,7 @@ class Hospital extends StatelessWidget{
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterView_H()));
               },
-              child: Text('Register')),
+              child: const Text('Register')),
           ElevatedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView_H()));
@@ -56,12 +56,12 @@ class _MainPageState extends State<MainPage_H> {
           //const Text("Hello"),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Hospital_Data()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Hospital_Data()));
               },
               child: const Text('Hospital Data')),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Allocation_Suggestion()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Allocation_Suggestion()));
               },
               child: const Text('Allocation Suggestion')),
           ElevatedButton(
